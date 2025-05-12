@@ -28,11 +28,11 @@ button {
 }
 
 button.green {
-    background-image: url('https://github.com/nanzagi/juego-rana-web/blob/main/green_frog.png');
+    background-image: url('https://raw.githubusercontent.com/nanzagi/juego-rana-web/refs/heads/main/green_frog.png');
     background-size: cover;
 }
 
 button.red {
-    background-image: url('https://github.com/nanzagi/juego-rana-web/blob/main/red_frog.png');
+    background-image: url('https://raw.githubusercontent.com/nanzagi/juego-rana-web/refs/heads/main/red_frog.png');
     background-size: cover;
 }
