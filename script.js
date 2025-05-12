@@ -5,6 +5,7 @@ let selectedPos = -1;
 function initializeGame(n) {
     const mid = Math.floor((n - 1) / 2);
     board = Array(mid).fill("v").concat("_", Array(mid).fill("r"));
+    moveCount = 0;
     renderBoard();
 }
 
@@ -75,9 +76,19 @@ function checkWinCondition() {
 
     if (leftSide.every(cell => cell === "r") && rightSide.every(cell => cell === "v")) {
         alert(`¡Juego terminado en ${moveCount} movimientos!`);
-        initializeGame(board.length); // Reiniciar el juego
+        document.getElementById("game-container").style.display = "none";
+        document.getElementById("setup-container").style.display = "block";
     }
 }
 
-// Inicializar el juego con un tablero de tamaño 7
-initializeGame(7);
+// Manejar el inicio del juego
+document.getElementById("start-game").addEventListener("click", () => {
+    const numRanas = parseInt(document.getElementById("num-ranas").value, 10);
+    if (numRanas < 1 || numRanas > 10) {
+        alert("Por favor, elige un número entre 1 y 10.");
+        return;
+    }
+    document.getElementById("setup-container").style.display = "none";
+    document.getElementById("game-container").style.display = "block";
+    initializeGame(numRanas * 2 + 1); // El tamaño del tablero es 2 * numRanas + 1
+});
