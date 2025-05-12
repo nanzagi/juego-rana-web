@@ -8,7 +8,14 @@
 </head>
 <body>
     <h1>Salto de la Rana</h1>
-    <div id="game-container">
+    <!-- Contenedor del formulario -->
+    <div id="setup-container">
+        <label for="num-ranas">Número de ranas por lado:</label>
+        <input type="number" id="num-ranas" min="1" max="10" value="3">
+        <button id="start-game">Iniciar Juego</button>
+    </div>
+    <!-- Contenedor del juego -->
+    <div id="game-container" style="display: none;">
         <div id="board"></div>
         <p id="move-count">Movimientos: 0</p>
     </div>
